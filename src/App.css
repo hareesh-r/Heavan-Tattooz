@@ -28,16 +28,17 @@
 
 .App,
 #gallery,
-#info,
+#info,#artist,
 #bookings {
   background-color: #1d1d1f;
 }
 
 #gallery,
-#info,
+#info,#artist,
 #bookings {
   min-height: 100vh;
   padding: 30px;
+  /* position: relative; */
 }
 
 .top-line {
@@ -233,6 +234,13 @@ a:hover,
   background-size: cover;
 }
 
+.bookings {
+  background-image: url("./assets/img/model3.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+}
+
 .card {
   background-color: #00000083;
   padding: 30px;
@@ -320,6 +328,16 @@ a:hover,
   }
 }
 
+.column img {
+  filter: grayscale(1);
+}
+.column img:hover {
+  filter: contrast(1.5);
+  transition: all 2s ease-in-out;
+}
+.gold-hover {
+  margin-top: 30px;
+}
 .booking-item:hover .gold-hover,
 .booking-item:hover img {
   color: #9d9757;
@@ -327,7 +345,7 @@ a:hover,
 }
 
 .bookings-container {
-  width: 100vw;
+  width: 90vw;
   margin-top: 100px;
 }
 
@@ -341,4 +359,44 @@ a:hover,
   height: 150px;
   object-fit: cover;
   filter: grayscale(1);
+}
+
+.side-title {
+  position: absolute;
+  transform: rotate(90deg);
+  right: 10px;
+}
+
+.side-title-gallery{
+  top: 120vh;
+}
+
+.side-title-info{
+  top: 230vh;
+}
+
+.side-title-artist{
+  top: 360vh;
+}
+.side-title-bookings{
+  top: 460vh;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #9d9757;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.artist-card {
+  background-color: #00000083;
+  padding: 30px;
+  border: 2px solid #9d975700;
+  margin: 30px;
+}
+.artist-card img {
+  height: 40vh;
 }
