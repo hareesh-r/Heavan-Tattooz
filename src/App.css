@@ -8,6 +8,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .logo {
   height: 100px;
   position: fixed;
@@ -28,13 +32,15 @@
 
 .App,
 #gallery,
-#info,#artist,
+#info,
+#artist,
 #bookings {
   background-color: #1d1d1f;
 }
 
 #gallery,
-#info,#artist,
+#info,
+#artist,
 #bookings {
   min-height: 100vh;
   padding: 30px;
@@ -114,6 +120,7 @@ a:hover,
 .nav {
   padding: 10px;
   margin: 10px;
+  z-index: 99999;
 }
 
 .nav-item {
@@ -331,13 +338,16 @@ a:hover,
 .column img {
   filter: grayscale(1);
 }
+
 .column img:hover {
   filter: contrast(1.5);
   transition: all 2s ease-in-out;
 }
+
 .gold-hover {
   margin-top: 30px;
 }
+
 .booking-item:hover .gold-hover,
 .booking-item:hover img {
   color: #9d9757;
@@ -367,18 +377,19 @@ a:hover,
   right: 10px;
 }
 
-.side-title-gallery{
+.side-title-gallery {
   top: 120vh;
 }
 
-.side-title-info{
+.side-title-info {
   top: 230vh;
 }
 
-.side-title-artist{
+.side-title-artist {
   top: 360vh;
 }
-.side-title-bookings{
+
+.side-title-bookings {
   top: 460vh;
 }
 
@@ -391,12 +402,41 @@ a:hover,
   margin: 0 2px;
 }
 
+.artist {
+  background-image: url("./assets/img/logo.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 .artist-card {
   background-color: #00000083;
   padding: 30px;
   border: 2px solid #9d975700;
   margin: 30px;
 }
+
 .artist-card img {
-  height: 40vh;
+  height: 54vh;
+  object-fit: contain;
+  width: 500px;
+}
+
+.gallery-pointer {
+  left: 100px;
+  top: 99vh;
+}
+
+.info-pointer {
+  left: 195px;
+  top: 208vh;
+}
+
+.artist-pointer {
+  left: 293px;
+  top: 337vh;
+}
+
+.bookings-pointer {
+  left: 370px;
+  top: 437vh;
 }
