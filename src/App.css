@@ -1,7 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #0e0e0e;
   background-color: #f1f1f9;
+  font-family: 'Poppins', sans-serif;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  flex-direction: row;
+}
+.col {
+  flex-direction: column;
+}
+.right,.top {
+  text-align: right;
+  align-items: flex-start;
+}
+.left,.bottom {
+  text-align: left;
+  align-items: flex-end;
+}
+.sb {
+  justify-content: space-between;
+}
+.sa {
+  justify-content: space-around;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  color: #000;
+}
+.flex-1 {
+  flex: 1;
+}
+.pointer {
+  cursor: pointer;
+}
+.nav {
+  padding: 10px;
+}
+.nav-logo img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0px 20px;
+}
+.home {
+  position: relative;
+  margin-top: 50px;
+}
+.subtle-title {
+  color: #c1bec0;
+  font-size: 16px;
+  z-index: 999;
+  position: absolute;
+  top: -38px;
+}
+
+.tattoo-image {
+  position: absolute;
+  top: 50px;
+  left: 33vw;
+  height: 50vh;
+  background-color: transparent;
+}
+
+.door-opening {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  width: 30vw;
+  top: 26px;
+  height: 52vh;
+  color: #000;
+  background-color: #000;
+  border-radius: 30px 30px 0px 0px;
+}
+
+.door-opening-1 {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  width: 28vw;
+  top: 39px;
+  height: 52vh;
+  background-color: #fff;
+  border-radius: 18px 18px 0px 0px;
+}
+
+.nav-mid {
+  max-width: 50vw;
 }
