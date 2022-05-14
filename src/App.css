@@ -4,46 +4,341 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #0e0e0e;
-  background-color: #f1f1f9;
+  color: #b8b8ba;
   font-family: 'Poppins', sans-serif;
 }
+
+.logo {
+  height: 100px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  filter: brightness(1.5);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.App,
+#gallery,
+#info,
+#bookings {
+  background-color: #1d1d1f;
+}
+
+#gallery,
+#info,
+#bookings {
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.top-line {
+  width: 100vw;
+  height: 5px;
+  background-color: #c8bb6b;
+}
+
+.top-line-tri {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background-color: #c8bb6b;
+}
+
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .row {
   flex-direction: row;
 }
+
 .col {
   flex-direction: column;
 }
-.right,.top {
+
+.right,
+.top {
   text-align: right;
   align-items: flex-start;
 }
-.left,.bottom {
+
+.left,
+.bottom {
   text-align: left;
   align-items: flex-end;
+  justify-content: flex-start
 }
+
 .sb {
   justify-content: space-between;
 }
+
 .sa {
   justify-content: space-around;
 }
+
 a {
   text-decoration: none;
 }
-a:hover {
+
+a:hover,
+.nav-item:hover {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
-  color: #000;
+  color: #9d9757;
 }
+
 .flex-1 {
   flex: 1;
 }
+
 .pointer {
   cursor: pointer;
+}
+
+.nav {
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.active {
+  color: #9d9757;
+}
+
+.gold {
+  color: #9d9757;
+}
+
+.home {
+  height: 100vh;
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/girl.png?alt=media&token=23bedd55-5ad6-4ef2-bafb-d289ed0d5cf7');
+  background-repeat: no-repeat;
+  background-position-x: 156px;
+  background-position-y: 0px;
+  background-size: 87vh;
+}
+
+.left-home {
+  width: 50vw;
+  align-items: flex-start;
+}
+
+.left-home-container {
+  padding: 20px;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.left-home-container>div {
+  margin-bottom: 20px;
+}
+
+.lite-grey {
+  color: hsl(240deg 1% 39%);
+}
+
+.time {
+  margin-left: 30px;
+}
+
+.left-home strong {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.title-img {
+  background-color: transparent;
+  width: 30vw;
+}
+
+.right-home {
+  width: 50vw;
+  background: none;
+  height: 100%;
+}
+
+.quote img {
+  position: absolute;
+  width: 25px;
+  margin-bottom: 25px;
+}
+
+.quote-title {
+  text-align: right;
+  color: hsl(240deg 3% 87%);
+  font-weight: 800;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.tag-line {
+  font-size: 35px;
+  letter-spacing: 4px;
+  color: hsl(0deg 0% 82%);
+}
+
+.underline {
+  width: 200px;
+  height: 3px;
+  background-color: hsl(240deg 1% 72%);
+  margin-bottom: 20px;
+}
+
+.quote-description {
+  color: hsl(240deg 1% 60%);
+}
+
+.button-grp {
+  margin-top: 50px;
+}
+
+.button-grp button {
+  cursor: pointer;
+  color: hsl(240deg 1% 60%);
+  padding: 10px 30px;
+  margin: 20px;
+  background-color: transparent;
+  border: 2px solid hsl(240deg 1% 60%);
+  border-radius: 10px;
+}
+
+.button-grp button:hover {
+  color: rgb(197, 197, 206);
+  border: 2px solid rgb(197, 197, 206);
+}
+
+.info,
+.gallery {
+  background-image: url("./assets/img/model2.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+}
+
+.card {
+  background-color: #00000083;
+  padding: 30px;
+  border: 2px solid #9d975700;
+  margin: 30px;
+}
+
+.card:hover {
+  background-color: #000000ac;
+  border: 2px solid #9d9757;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.gallery {
+  padding-top: 50px;
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-container {
+  padding: 30px;
+  height: 80vh;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.734);
+  overflow-y: scroll;
+}
+
+.black-box-top,
+.black-box {
+  background-color: rgba(0, 0, 0, 0.734);
+  width: 80vw;
+  height: 60px;
+}
+
+.black-box-top {
+  padding: 10px;
+  padding-left: 40px;
+  margin-top: 50px;
+}
+
+.roww {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.booking-item:hover .gold-hover,
+.booking-item:hover img {
+  color: #9d9757;
+  filter: grayscale(0);
+}
+
+.bookings-container {
+  width: 100vw;
+  margin-top: 100px;
+}
+
+.booking-item {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.booking-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  filter: grayscale(1);
 }
