@@ -54,7 +54,9 @@ html {
   height: 5px;
   background-color: #c8bb6b;
 }
-
+#triangle {
+  z-index: 9999999;
+}
 .top-line-tri {
   position: fixed;
   top: -10px;
@@ -381,7 +383,7 @@ a:hover,
   width: 150px;
   height: 150px;
   object-fit: cover;
-  filter: grayscale(1);
+  filter: grayscale(0.6);
 }
 
 .side-title {
@@ -578,16 +580,27 @@ a:hover,
     right: 0px;
   }
 
+  .info,
+  .artist,
+  .bookings,
+  .artist {
+    position: relative;
+  }
+
   .side-title-info {
-    top: 217vh;
+    top: 12vh;
   }
 
   .side-title-artist {
-    top: 458vh;
+    top: 7vh !important;
   }
 
   .side-title-bookings {
-    top: 557vh;
+    top: 10vh;
+  }
+
+  .side-title-artist {
+    top: 10vh;
   }
 
   .artist-card {
