@@ -378,7 +378,9 @@ function App() {
                 placeholder="Password"
               />
             </div>
+            <button className="back" onClick={()=>setShowAdmin(!setShowAdmin)}>Back</button>
           </div>
+          
           {(UserName === "varun" && Password === "heaventattoozvarun") ||
           (UserName === "sneha" && Password === "heaventattoozsneha") ? (
             <div className="flex col sa">

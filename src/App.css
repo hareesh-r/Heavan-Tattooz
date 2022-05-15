@@ -470,7 +470,7 @@ a:hover,
   outline-width: 0;
 }
 
-.input-grp button {
+.input-grp button,.back {
   cursor: pointer;
   color: #9d9757;
   padding: 10px 30px;
@@ -478,9 +478,11 @@ a:hover,
   background-color: transparent;
   border: 2px solid #9d9757;
   border-radius: 10px;
+} 
+.back {
+  margin-top: 20px;
 }
-
-.input-grp button:hover {
+.input-grp button:hover,.back:hover {
   color: black;
   border: 2px solid black;
   background-color: #9d9757;
