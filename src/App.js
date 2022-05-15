@@ -1,44 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import logo from "./assets/img/logo.png";
 import title from "./assets/img/title.png";
 import quote from "./assets/img/quote.jpeg";
 import varun from "./assets/img/varun.jpeg";
 import sneha from "./assets/img/sneha.PNG";
+import db from "./firebase";
 
 function App() {
-  const [galleryImageURLList, setGalleryImageURLList] = useState([
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/243170819_117782853966443_1084189875318892950_n.jpg?alt=media&token=3ca0a650-3d41-4aa5-8f0e-bea13aa3d434",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240446983_1857483884413029_7090633982480615246_n.jpg?alt=media&token=b483e7e7-3ad7-442d-8164-d9415fa02b5c",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240338643_581961716141133_7201891540458121396_n.jpg?alt=media&token=103f9fbf-5746-4f7e-9e60-d21601d55029",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240229360_4223454017749267_3978895926170855874_n.jpg?alt=media&token=7c6632cd-dad7-40a2-b6a0-215bcf8618f9",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240111252_382058380051507_2652896964985804596_n.jpg?alt=media&token=66e6518a-b259-4c35-99c8-0c1bdb057d49",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/239662045_246369054010535_374104280886273195_n.jpg?alt=media&token=0a1c2be4-f37b-44da-8a69-2ba07a0050b6",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/239629760_356968529249046_489682444598649654_n.jpg?alt=media&token=8b007107-9fcd-4bd7-a4a7-3031daabaf45",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/230871392_795601804459738_5893987971165873900_n.jpg?alt=media&token=81cd0fb3-d4fa-49eb-a6ca-f2947bdf30b2",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/213582965_193176599316299_9076140851186245588_n.jpg?alt=media&token=5e3653ef-67df-4a7d-ad6a-ef8e31da7fc7",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/160058079_774663656792815_5763007212025251754_n.jpg?alt=media&token=4ffcf5ed-fcbc-44f1-ab6d-068cb28f1274",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/192169413_325674652406896_1923575219187121037_n.jpg?alt=media&token=bf2b7e81-2eab-40b3-833e-92f8098354f6",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/243170819_117782853966443_1084189875318892950_n.jpg?alt=media&token=3ca0a650-3d41-4aa5-8f0e-bea13aa3d434",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240446983_1857483884413029_7090633982480615246_n.jpg?alt=media&token=b483e7e7-3ad7-442d-8164-d9415fa02b5c",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240338643_581961716141133_7201891540458121396_n.jpg?alt=media&token=103f9fbf-5746-4f7e-9e60-d21601d55029",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240229360_4223454017749267_3978895926170855874_n.jpg?alt=media&token=7c6632cd-dad7-40a2-b6a0-215bcf8618f9",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/240111252_382058380051507_2652896964985804596_n.jpg?alt=media&token=66e6518a-b259-4c35-99c8-0c1bdb057d49",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/239662045_246369054010535_374104280886273195_n.jpg?alt=media&token=0a1c2be4-f37b-44da-8a69-2ba07a0050b6",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/239629760_356968529249046_489682444598649654_n.jpg?alt=media&token=8b007107-9fcd-4bd7-a4a7-3031daabaf45",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/230871392_795601804459738_5893987971165873900_n.jpg?alt=media&token=81cd0fb3-d4fa-49eb-a6ca-f2947bdf30b2",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/213582965_193176599316299_9076140851186245588_n.jpg?alt=media&token=5e3653ef-67df-4a7d-ad6a-ef8e31da7fc7",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/160058079_774663656792815_5763007212025251754_n.jpg?alt=media&token=4ffcf5ed-fcbc-44f1-ab6d-068cb28f1274",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/192169413_325674652406896_1923575219187121037_n.jpg?alt=media&token=bf2b7e81-2eab-40b3-833e-92f8098354f6",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.30.29%20AM.jpeg?alt=media&token=ea336e52-96d9-4601-b12f-36df59c5eb50",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.29.53%20AM.jpeg?alt=media&token=a4fd15ce-8c50-40b9-830a-deb258ba9eae",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.29.28%20AM.jpeg?alt=media&token=4e33a053-794b-4f6a-bfbc-44b2bf8feb8c",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.27.27%20AM.jpeg?alt=media&token=70c1ebb1-bc21-453d-96e9-cc167fa1e19f",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.27.27%20AM%20(1).jpeg?alt=media&token=40069278-39f8-4e11-afa3-37562dcedc17",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.27.26%20AM%20(1).jpeg?alt=media&token=7385a95a-22da-4364-9543-a276e4a81e4b",
-    "https://firebasestorage.googleapis.com/v0/b/heaven-tattoo.appspot.com/o/WhatsApp%20Image%202022-05-15%20at%201.27.26%20AM.jpeg?alt=media&token=a994f367-fdb6-48c0-a81a-44dedc728add",
-    "",
-  ]);
+  const [galleryImageURLList, setGalleryImageURLList] = useState([""]);
+
+  const handleClick = (currentURL) => {
+    db.collection("images")
+      .add({
+        url: currentURL,
+      })
+      .then((docRef) => {
+        alert("Data Successfully Submitted");
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+  };
+
+  useEffect(() => {
+    var arr = [];
+    db.collection("images")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((element) => {
+          var data = element.data();
+          arr.push(data.url);
+          setGalleryImageURLList(arr);
+        });
+      });
+  }, []);
+
   const handleOnclick = (currentClass) => {
     const ourClassList = [
       "home-link",
@@ -107,7 +104,7 @@ function App() {
             Bookings
           </a>
         </div>
-        <img className="logo" src={logo} alt="" />
+        <img onClick={() => handleClick()} className="logo" src={logo} alt="" />
       </div>
       <div className="home flex row sa" id="home">
         <div className="left-home left-home-container flex col">
