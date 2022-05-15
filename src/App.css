@@ -533,78 +533,104 @@ a:hover,
   .bookings-pointer {
     left: 25rem;
   }
+
   .tag-line {
     font-size: 24px;
   }
+
   .underline {
-    width:130px;
+    width: 130px;
   }
+
   .gallery-title {
     font-size: 25px;
-  }.side-title h1 {
+  }
+
+  .side-title h1 {
     font-size: 25px;
   }
+
   .info-container {
     flex-direction: column;
   }
+
   .info {
     background-repeat: repeat;
     background-size: inherit;
   }
+
   .card img {
     width: 250px;
     height: 250px;
   }
+
   .card {
     padding: 10px;
     margin: 10px;
     margin-top: 30px;
   }
+
   .card:hover {
     transform: scale(1);
   }
+
   .side-title {
     right: 0px;
   }
-  .side-title-info{
+
+  .side-title-info {
     top: 217vh;
   }
-  .side-title-artist{
+
+  .side-title-artist {
     top: 458vh;
   }
-  .side-title-bookings{
+
+  .side-title-bookings {
     top: 557vh;
   }
+
   .artist-card {
     padding: 10px;
     margin: 10px;
     margin-top: 30px;
   }
+
   .artist-card img {
     width: 250px;
     height: 250px;
   }
-  .artist-container{
+
+  .artist-container {
     display: flex;
     flex-direction: column;
   }
-  .booking-item{
+
+  .booking-item {
     margin: 10px;
   }
-  .booking-item a img{
+
+  .booking-item a img {
     width: 50px;
     height: 50px;
   }
+
   .bookings-container {
     flex-direction: column;
   }
+
   .bookings h1 {
     font-size: 25px;
   }
+
   .logo {
     height: 49px;
     position: fixed;
     top: 6px;
     right: 5px;
+  }
+
+  .roww {
+    margin-top: 383vh;
   }
 }
